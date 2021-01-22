@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "BSplineComponent.h"
+#include "Misc/Paths.h"
 
 
 
@@ -11,19 +12,21 @@ UBSplineComponent::UBSplineComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	std::string spline_path("C:\\Users\\borna\\Documents\\Unreal Projects\\rg_lab1\\Intermediate\\ProjectFiles\\");
+    //UE_LOG(LogTemp, Warning, TEXT("%s"), *FPaths::EngineContentDir());
+    auto spline_path = FPaths::ProjectContentDir();
+    
+	//std::string spline_path((char*)*FPaths::EngineContentDir());
 	spline_path += "bspline_sphere.txt";
-	std::ifstream stream_control_pts(spline_path);
+    UE_LOG(LogTemp, Warning, TEXT("%s"), *spline_path);
 
-
+	std::ifstream stream_control_pts(TCHAR_TO_UTF8(*spline_path));
 	float x, y, z;
 	while (stream_control_pts >> x >> y >> z) {
 		control_points.Emplace(x, y, z);
 		UE_LOG(LogTemp, Warning, TEXT("Loading control points %f %f %f"), x, y, z);
 	}
 
-    UE_LOG(LogTemp, Warning, TEXT("A\nB\nC\nD"), x, y, z);
+   // UE_LOG(LogTemp, Warning, TEXT("A\nB\nC\nD"), x, y, z);
 
 }
 

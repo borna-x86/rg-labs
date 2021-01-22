@@ -86,5 +86,5 @@ void AMyParticleSystemActor::Tick(float DeltaTime)
 
 
 bool AMyParticleSystemActor::ShouldTickIfViewportsOnly() const {
-	return true;
+	return false;
 }

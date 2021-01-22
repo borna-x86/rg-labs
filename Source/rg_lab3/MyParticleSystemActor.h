@@ -60,7 +60,7 @@ public:
 };
 
 UCLASS()
-class IRG_LAB2_API AMyParticleSystemActor : public AActor
+class RG_LAB3_API AMyParticleSystemActor : public AActor
 {
 	GENERATED_BODY()
 	
@@ -82,6 +82,6 @@ private:
 	UMaterial* MeshMaterial;
 	Particle* SpawnParticle();
 	TSet<Particle*> Particles;
-	int MaxParticles = 800;
+	int MaxParticles = 300;
 	int MaxParticlesPerIteration = 15;
 };

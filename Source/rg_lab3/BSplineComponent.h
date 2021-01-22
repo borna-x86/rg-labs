@@ -14,7 +14,7 @@
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class RG_LAB1_API UBSplineComponent : public UActorComponent
+class RG_LAB3_API UBSplineComponent : public UActorComponent
 {
 	GENERATED_BODY()
 

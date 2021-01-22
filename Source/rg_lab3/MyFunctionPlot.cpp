@@ -170,17 +170,8 @@ void AMyFunctionPlot::Tick(float DeltaTime)
 	}
 
 
-	//UE_LOG(LogTemp, Warning, TEXT("len verts = %d, len inds = %d"), verts.Num(), inds.Num());
-	//draw function mesh
-	
-	//UE_LOG(LogTemp, Warning, TEXT("#color = %f %f %f"), VertexColors.Num());
-	
-	//UE_LOG(LogTemp, Warning, TEXT("is vis = %d"), PMC->IsMeshSectionVisible(0));
-	//GetWorld()->LineBatcher->DrawMesh(verts, inds, FColor(0, 255, 0), SDPG_Foreground, 0.0f);
-	GetWorld()->LineBatcher->DrawLine(FVector(-2000, -2000, 0), FVector(2000, -2000, 0), FLinearColor(1, 1, 1), SDPG_Foreground, 10.0f);
-	GetWorld()->LineBatcher->DrawLine(FVector(-2000, -2000, 0), FVector(-2000, 2000, 0), FLinearColor(1, 1, 1), SDPG_Foreground, 10.0f);
-	//draw simplex
 
+	//draw simplex
 	TArray<FVector> simplex_vertices;
 	simplex_vertices.Emplace(Simplex[0].X * 400, Simplex[0].Y * 400, fn(Simplex[0].X, Simplex[0].Y));
 	simplex_vertices.Emplace(Simplex[1].X * 400, Simplex[1].Y * 400, fn(Simplex[1].X, Simplex[1].Y));
